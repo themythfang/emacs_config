@@ -20,7 +20,7 @@
 
 ;; (define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
 ;; (define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
-(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-find-tag-from-here)
+(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-find-tag)
 (define-key helm-gtags-mode-map (kbd "C-c C-f") 'helm-gtags-find-files)
 ;; (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
 (define-key helm-gtags-mode-map (kbd "M-p") 'helm-gtags-pop-stack)

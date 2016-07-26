@@ -39,3 +39,4 @@
 
 ;; (require 'yf-ggtags)
 (require 'yf-helm-gtags)
+(require'yf-function-args)
