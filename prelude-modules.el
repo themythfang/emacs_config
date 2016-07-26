@@ -37,6 +37,7 @@
 ;; (require 'prelude-xml)
 ;; (require 'prelude-yaml)
 
+(require 'yf-basic)
 ;; (require 'yf-ggtags)
 (require 'yf-helm-gtags)
 (require'yf-function-args)
