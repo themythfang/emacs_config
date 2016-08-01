@@ -40,4 +40,5 @@
 (require 'yf-basic)
 ;; (require 'yf-ggtags)
 (require 'yf-helm-gtags)
-(require'yf-function-args)
+(require 'yf-function-args)
+(require 'yf-theme)
