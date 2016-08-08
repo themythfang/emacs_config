@@ -36,7 +36,7 @@
 
 (defun prelude-c-mode-common-defaults ()
   (setq c-default-style "k&r"
-        c-basic-offset 4)
+        c-basic-offset 2)
   (c-set-offset 'substatement-open 0))
 
 (setq prelude-c-mode-common-hook 'prelude-c-mode-common-defaults)
@@ -54,6 +54,11 @@
 
 (add-hook 'makefile-mode-hook (lambda ()
                                 (run-hooks 'prelude-makefile-mode-hook)))
+
+(require 'yf-basic)
+(add-hook 'c-mode-common-hook (lambda ()
+                                (run-hooks 'yf-basic-hook)))
+
 (provide 'prelude-c)
 
 ;;; prelude-c.el ends here

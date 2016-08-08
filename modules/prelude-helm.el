@@ -59,9 +59,12 @@
 (define-key helm-command-map (kbd "g")     'helm-do-grep)
 (define-key helm-command-map (kbd "C-c w") 'helm-wikipedia-suggest)
 (define-key helm-command-map (kbd "SPC")   'helm-all-mark-rings)
-(global-set-key (kbd "C-q") 'helm-bookmarks)
 
 (push "Press <C-c p h> to navigate a project in Helm." prelude-tips)
+
+(require 'yf-helm)
+(add-hook 'c-mode-common-hook (lambda ()
+                                (run-hooks 'yf-helm-hook)))
 
 (provide 'prelude-helm)
 
