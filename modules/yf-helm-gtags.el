@@ -17,6 +17,7 @@
 (add-hook 'c-mode-hook 'helm-gtags-mode)
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
+(add-hook 'java-mode-hook 'helm-gtags-mode)
 
 ;; (define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
 ;; (define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
@@ -26,5 +27,8 @@
 (define-key helm-gtags-mode-map (kbd "M-p") 'helm-gtags-pop-stack)
 (define-key helm-gtags-mode-map (kbd "C-,") 'helm-gtags-previous-history)
 (define-key helm-gtags-mode-map (kbd "C-.") 'helm-gtags-next-history)
+(define-key helm-gtags-mode-map (kbd "C-c C-r") 'helm-gtags-resume)
+(define-key helm-gtags-mode-map (kbd "C-c C-u") 'helm-gtags-update-tags)
+(define-key helm-gtags-mode-map (kbd "C-c C-s") 'helm-gtags-show-stack)
 
 (provide 'yf-helm-gtags)

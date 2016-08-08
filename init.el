@@ -132,6 +132,4 @@ by Prelude.")
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
-(read-only-mode t)
-
 ;;; init.el ends here
