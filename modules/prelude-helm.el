@@ -62,6 +62,10 @@
 
 (push "Press <C-c p h> to navigate a project in Helm." prelude-tips)
 
+(require 'yf-helm)
+(add-hook 'c-mode-common-hook (lambda ()
+                                (run-hooks 'yf-helm-hook)))
+
 (provide 'prelude-helm)
 
 ;;; prelude-helm.el ends here
