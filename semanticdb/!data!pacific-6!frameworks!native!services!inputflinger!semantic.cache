@@ -1,0 +1,2653 @@
+;; Object inputflinger/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "inputflinger/"
+  :tables
+  (list
+    (semanticdb-table "InputReader.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("LOG_TAG" variable (:constant-flag t) nil [630 637])
+            ("DEBUG_RAW_EVENTS" variable (:constant-flag t) nil [754 770])
+            ("DEBUG_HACKS" variable (:constant-flag t) nil [840 851])
+            ("DEBUG_VIRTUAL_KEYS" variable (:constant-flag t) nil [915 933])
+            ("DEBUG_POINTERS" variable (:constant-flag t) nil [983 997])
+            ("DEBUG_POINTER_ASSIGNMENT" variable (:constant-flag t) nil [1070 1094])
+            ("DEBUG_GESTURES" variable (:constant-flag t) nil [1153 1167])
+            ("DEBUG_VIBRATOR" variable (:constant-flag t) nil [1221 1235])
+            ("DEBUG_STYLUS_FUSION" variable (:constant-flag t) nil [1295 1314])
+            ("InputReader.h" include nil nil [1318 1342])
+            ("cutils/log.h" include (:system-flag t) nil [1344 1367])
+            ("cutils/properties.h" include (:system-flag t) nil [1368 1398])
+            ("input/Keyboard.h" include (:system-flag t) nil [1399 1426])
+            ("input/VirtualKeyMap.h" include (:system-flag t) nil [1427 1459])
+            ("inttypes.h" include (:system-flag t) nil [1461 1482])
+            ("stddef.h" include (:system-flag t) nil [1483 1502])
+            ("stdlib.h" include (:system-flag t) nil [1503 1522])
+            ("unistd.h" include (:system-flag t) nil [1523 1542])
+            ("errno.h" include (:system-flag t) nil [1543 1561])
+            ("limits.h" include (:system-flag t) nil [1562 1581])
+            ("math.h" include (:system-flag t) nil [1582 1599])
+            ("INDENT" variable (:constant-flag t) nil [1609 1615])
+            ("INDENT2" variable (:constant-flag t) nil [1629 1636])
+            ("INDENT3" variable (:constant-flag t) nil [1652 1659])
+            ("INDENT4" variable (:constant-flag t) nil [1677 1684])
+            ("INDENT5" variable (:constant-flag t) nil [1704 1711])
+            ("android" type
+               (:members 
+                  ( ("MAX_SLOTS" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "32"
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1855 1890])
+                    ("EXTERNAL_STYLUS_DATA_TIMEOUT" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "ms2ns(72)"
+                        :type ("nsecs_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1995 2057])
+                    ("TOUCH_DATA_TIMEOUT" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "ms2ns(20)"
+                        :type ("nsecs_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2145 2197])
+                    ("STYLUS_DATA_LATENCY" variable
+                       (:typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "ms2ns(10)"
+                        :type ("nsecs_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2303 2356])
+                    ("abs" function
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type ("T" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("value" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("T" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2428 2443]))                          
+                        :typemodifiers ("inline" "static"))
+                        (reparse-symbol namespacesubparts) [2387 2487])
+                    ("min" function
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type ("T" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("a" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("T" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2530 2541])
+                            ("b" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("T" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2542 2553]))                          
+                        :typemodifiers ("inline" "static"))
+                        (reparse-symbol namespacesubparts) [2489 2583])
+                    ("swap" function
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type "void"
+                        :arguments 
+                          ( ("a" variable
+                               (:reference 1
+                                :type ("T" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2630 2635])
+                            ("b" variable
+                               (:reference 1
+                                :type ("T" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2636 2641]))                          
+                        :typemodifiers ("inline" "static"))
+                        (reparse-symbol namespacesubparts) [2585 2686])
+                    ("avg" function
+                       (:typemodifiers ("inline" "static")
+                        :arguments 
+                          ( ("x" variable (:type "float") (reparse-symbol arg-sub-list) [2712 2720])
+                            ("y" variable (:type "float") (reparse-symbol arg-sub-list) [2721 2729]))                          
+                        :type "float")
+                        (reparse-symbol namespacesubparts) [2688 2757])
+                    ("distance" function
+                       (:typemodifiers ("inline" "static")
+                        :arguments 
+                          ( ("x1" variable (:type "float") (reparse-symbol arg-sub-list) [2788 2797])
+                            ("y1" variable (:type "float") (reparse-symbol arg-sub-list) [2798 2807])
+                            ("x2" variable (:type "float") (reparse-symbol arg-sub-list) [2808 2817])
+                            ("y2" variable (:type "float") (reparse-symbol arg-sub-list) [2818 2827]))                          
+                        :type "float")
+                        (reparse-symbol namespacesubparts) [2759 2868])
+                    ("signExtendNybble" function
+                       (:typemodifiers ("inline" "static")
+                        :arguments 
+                          ( ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2909 2923]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2870 2971])
+                    ("toString" function
+                       (:pointer 1
+                        :typemodifiers ("static" "inline")
+                        :constant-flag t
+                        :arguments 
+                          ( ("value" variable (:type "bool") (reparse-symbol arg-sub-list) [3008 3019]))                          
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [2973 3060])
+                    ("rotateValueUsingRotationMap" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("value" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3105 3119])
+                            ("orientation" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3120 3140])
+                            ("map" variable
+                               (:dereference 2
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3149 3172])
+                            ("mapSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3173 3188]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3062 3417])
+                    ("keyCodeRotationMap" variable
+                       (:dereference 2
+                        :typemodifiers ("static")
+                        :constant-flag t
+                        :default-value "{
+        // key codes enumerated counter-clockwise with the original (unrotated) key first
+        // no rotation,        90 degree rotation,  180 degree rotation, 270 degree rotation
+        { AKEYCODE_DPAD_DOWN,   AKEYCODE_DPAD_RIGHT,  AKEYCODE_DPAD_UP,     AKEYCODE_DPAD_LEFT },
+        { AKEYCODE_DPAD_RIGHT,  AKEYCODE_DPAD_UP,     AKEYCODE_DPAD_LEFT,   AKEYCODE_DPAD_DOWN },
+        { AKEYCODE_DPAD_UP,     AKEYCODE_DPAD_LEFT,   AKEYCODE_DPAD_DOWN,   AKEYCODE_DPAD_RIGHT },
+        { AKEYCODE_DPAD_LEFT,   AKEYCODE_DPAD_DOWN,   AKEYCODE_DPAD_RIGHT,  AKEYCODE_DPAD_UP },
+}"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [3419 4044])
+                    ("rotateKeyCode" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4188 4204])
+                            ("orientation" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4205 4225]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [4159 4347])
+                    ("rotateDelta" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("orientation" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4373 4393])
+                            ("deltaX" variable
+                               (:pointer 1
+                                :type "float")
+                                (reparse-symbol arg-sub-list) [4394 4408])
+                            ("deltaY" variable
+                               (:pointer 1
+                                :type "float")
+                                (reparse-symbol arg-sub-list) [4409 4423]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [4349 4832])
+                    ("sourcesMatchMask" function
+                       (:typemodifiers ("static" "inline")
+                        :arguments 
+                          ( ("sources" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4870 4887])
+                            ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4888 4908]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [4834 4981])
+                    ("isPointerDown" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("buttonState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5176 5196]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [5150 5354])
+                    ("calculateCommonVector" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("a" variable (:type "float") (reparse-symbol arg-sub-list) [5391 5399])
+                            ("b" variable (:type "float") (reparse-symbol arg-sub-list) [5400 5408]))                          
+                        :type "float")
+                        (reparse-symbol namespacesubparts) [5356 5568])
+                    ("synthesizeButtonKey" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("context" variable
+                               (:pointer 1
+                                :type ("InputReaderContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [5602 5630])
+                            ("action" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5631 5646])
+                            ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5655 5668])
+                            ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5669 5686])
+                            ("source" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5687 5703])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5712 5733])
+                            ("lastButtonState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5734 5758])
+                            ("currentButtonState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5759 5786])
+                            ("buttonState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5795 5815])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5816 5832]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [5570 6368])
+                    ("synthesizeButtonKeys" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("context" variable
+                               (:pointer 1
+                                :type ("InputReaderContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6403 6431])
+                            ("action" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6432 6447])
+                            ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6456 6469])
+                            ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6470 6487])
+                            ("source" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6488 6504])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6513 6534])
+                            ("lastButtonState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6535 6559])
+                            ("currentButtonState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6560 6587]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [6370 6961])
+                    ("getDisplayInfo" function
+                       (:parent "InputReaderConfiguration"
+                        :arguments 
+                          ( ("external" variable (:type "bool") (reparse-symbol arg-sub-list) [7047 7061])
+                            ("outViewport" variable
+                               (:pointer 1
+                                :type ("DisplayViewport" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7062 7091]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [7001 7300])
+                    ("setDisplayInfo" function
+                       (:parent "InputReaderConfiguration"
+                        :arguments 
+                          ( ("external" variable (:type "bool") (reparse-symbol arg-sub-list) [7348 7362])
+                            ("viewport" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("DisplayViewport" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7363 7395]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7302 7490])
+                    ("applyTo" function
+                       (:parent "TouchAffineTransformation"
+                        :arguments 
+                          ( ("x" variable
+                               (:reference 1
+                                :type "float")
+                                (reparse-symbol arg-sub-list) [7568 7577])
+                            ("y" variable
+                               (:reference 1
+                                :type "float")
+                                (reparse-symbol arg-sub-list) [7578 7587]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [7528 7744])
+                    ("InputReader" function
+                       (:constructor-flag t
+                        :parent "InputReader"
+                        :arguments 
+                          ( ("eventHub" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("EventHubInterface" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [7796 7834])
+                            ("policy" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("InputReaderPolicyInterface" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [7843 7888])
+                            ("listener" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("InputListenerInterface" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [7897 7940]))                          
+                        :type ("InputReader" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [7771 8459])
+                    ("InputReader" function
+                       (:destructor-flag t
+                        :parent "InputReader"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8461 8585])
+                    ("loopOnce" function
+                       (:parent "InputReader"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [8587 10843])
+                    ("processEventsLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("rawEvents" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [10883 10909])
+                            ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10910 10923]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [10845 12299])
+                    ("addDeviceLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12335 12348])
+                            ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12349 12366]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [12301 13451])
+                    ("removeDeviceLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13490 13503])
+                            ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13504 13521]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [13453 14372])
+                    ("createDeviceLocked" function
+                       (:pointer 1
+                        :parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14419 14436])
+                            ("controllerNumber" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14437 14462])
+                            ("identifier" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("InputDeviceIdentifier" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [14471 14511])
+                            ("classes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14512 14529]))                          
+                        :type ("InputDevice" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [14374 16601])
+                    ("processEventsForDeviceLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16650 16667])
+                            ("rawEvents" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [16676 16702])
+                            ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16703 16716]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [16603 17119])
+                    ("timeoutExpiredLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17160 17173]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17121 17373])
+                    ("handleConfigurationChangedLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17426 17439]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17375 17709])
+                    ("refreshConfigurationLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17756 17773]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [17711 18379])
+                    ("updateGlobalMetaStateLocked" function
+                       (:parent "InputReader"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [18381 18619])
+                    ("getGlobalMetaStateLocked" function
+                       (:parent "InputReader"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [18621 18701])
+                    ("notifyExternalStylusPresenceChanged" function
+                       (:parent "InputReader"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [18703 18853])
+                    ("getExternalStylusDevicesLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("outDevices" variable
+                               (:reference 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("InputDeviceInfo" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [18904 18940]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [18855 19248])
+                    ("dispatchExternalStylusState" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("state" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("StylusState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [19296 19321]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [19250 19483])
+                    ("disableVirtualKeysUntilLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("time" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19533 19546]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [19485 19589])
+                    ("shouldDropVirtualKeyLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("now" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19636 19648])
+                            ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [19657 19677])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19678 19694])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19695 19712]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [19591 20130])
+                    ("fadePointerLocked" function
+                       (:parent "InputReader"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20132 20312])
+                    ("requestTimeoutAtTimeLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20359 20372]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20314 20469])
+                    ("bumpGenerationLocked" function
+                       (:parent "InputReader"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20471 20544])
+                    ("getInputDevices" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("outInputDevices" variable
+                               (:reference 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("InputDeviceInfo" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [20580 20621]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20546 20694])
+                    ("getInputDevicesLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("outInputDevices" variable
+                               (:reference 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("InputDeviceInfo" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [20736 20777]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [20696 21100])
+                    ("getKeyCodeState" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21139 21156])
+                            ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21157 21177])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21186 21202]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21102 21321])
+                    ("getScanCodeState" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21361 21378])
+                            ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21379 21399])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21408 21425]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21323 21546])
+                    ("getSwitchState" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21584 21601])
+                            ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21602 21622])
+                            ("switchCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21623 21642]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21548 21763])
+                    ("getStateLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21801 21818])
+                            ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21819 21839])
+                            ("code" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21840 21853])
+                            ("getStateFunc" variable (:type ("GetStateFunc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21862 21888]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [21765 23099])
+                    ("hasKeys" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23127 23144])
+                            ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23145 23165])
+                            ("numCodes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23174 23190])
+                            ("keyCodes" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23191 23215])
+                            ("outFlags" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23216 23234]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [23101 23391])
+                    ("markSupportedKeyCodesLocked" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23439 23456])
+                            ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23457 23477])
+                            ("numCodes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23486 23502])
+                            ("keyCodes" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23503 23527])
+                            ("outFlags" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23528 23546]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [23393 24429])
+                    ("requestRefreshConfiguration" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24477 24494]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [24431 24723])
+                    ("vibrate" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24751 24768])
+                            ("pattern" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("nsecs_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [24769 24792])
+                            ("patternSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24793 24812])
+                            ("repeat" variable (:type ("ssize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24821 24836])
+                            ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24837 24851]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [24725 25095])
+                    ("cancelVibrate" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("deviceId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25129 25146])
+                            ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25147 25161]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [25097 25381])
+                    ("dump" function
+                       (:parent "InputReader"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [25406 25420]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [25383 28389])
+                    ("monitor" function
+                       (:parent "InputReader"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [28391 28659])
+                    ("ContextImpl" function
+                       (:constructor-flag t
+                        :parent "InputReader::ContextImpl"
+                        :arguments 
+                          ( ("reader" variable
+                               (:pointer 1
+                                :type ("InputReader" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [28737 28757]))                          
+                        :type ("ContextImpl" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [28699 28787])
+                    ("updateGlobalMetaState" function
+                       (:parent "InputReader::ContextImpl"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [28789 28937])
+                    ("getGlobalMetaState" function
+                       (:parent "InputReader::ContextImpl"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [28939 29091])
+                    ("disableVirtualKeysUntil" function
+                       (:parent "InputReader::ContextImpl"
+                        :arguments 
+                          ( ("time" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29148 29161]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [29093 29261])
+                    ("shouldDropVirtualKey" function
+                       (:parent "InputReader::ContextImpl"
+                        :arguments 
+                          ( ("now" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29315 29327])
+                            ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [29336 29356])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29357 29373])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29374 29391]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [29263 29521])
+                    ("fadePointer" function
+                       (:parent "InputReader::ContextImpl"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [29523 29651])
+                    ("requestTimeoutAtTime" function
+                       (:parent "InputReader::ContextImpl"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29705 29718]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [29653 29815])
+                    ("bumpGeneration" function
+                       (:parent "InputReader::ContextImpl"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [29817 29961])
+                    ("getExternalStylusDevices" function
+                       (:parent "InputReader::ContextImpl"
+                        :arguments 
+                          ( ("outDevices" variable
+                               (:reference 1
+                                :type ("Vector" type
+                                     (:template-specifier 
+                                        ( ("InputDeviceInfo" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [30019 30055]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [29963 30190])
+                    ("dispatchExternalStylusState" function
+                       (:parent "InputReader::ContextImpl"
+                        :arguments 
+                          ( ("state" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("StylusState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [30251 30276]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30192 30329])
+                    ("getPolicy" function
+                       (:pointer 1
+                        :parent "InputReader::ContextImpl"
+                        :type ("InputReaderPolicyInterface" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [30331 30435])
+                    ("getListener" function
+                       (:pointer 1
+                        :parent "InputReader::ContextImpl"
+                        :type ("InputListenerInterface" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [30437 30547])
+                    ("getEventHub" function
+                       (:pointer 1
+                        :parent "InputReader::ContextImpl"
+                        :type ("EventHubInterface" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [30549 30648])
+                    ("InputReaderThread" function
+                       (:constructor-flag t
+                        :parent "InputReaderThread"
+                        :arguments 
+                          ( ("reader" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("sp" type
+                                     (:template-specifier 
+                                        ( ("InputReaderInterface" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [30718 30757]))                          
+                        :type ("InputReaderThread" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [30681 30817])
+                    ("InputReaderThread" function
+                       (:destructor-flag t
+                        :parent "InputReaderThread"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30819 30862])
+                    ("threadLoop" function
+                       (:parent "InputReaderThread"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [30864 30946])
+                    ("InputDevice" function
+                       (:constructor-flag t
+                        :parent "InputDevice"
+                        :arguments 
+                          ( ("context" variable
+                               (:pointer 1
+                                :type ("InputReaderContext" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [30998 31026])
+                            ("id" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31027 31038])
+                            ("generation" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31039 31058])
+                            ("controllerNumber" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31067 31092])
+                            ("identifier" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("InputDeviceIdentifier" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [31093 31133])
+                            ("classes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31134 31151]))                          
+                        :type ("InputDevice" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [30973 31390])
+                    ("InputDevice" function
+                       (:destructor-flag t
+                        :parent "InputDevice"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [31392 31566])
+                    ("dump" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [31591 31605]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [31568 33217])
+                    ("addMapper" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("mapper" variable
+                               (:pointer 1
+                                :type ("InputMapper" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [33247 33267]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [33219 33297])
+                    ("configure" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33327 33340])
+                            ("config" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("InputReaderConfiguration" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [33341 33380])
+                            ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33381 33398]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [33299 34682])
+                    ("reset" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34708 34721]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [34684 34954])
+                    ("process" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("rawEvents" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [34982 35008])
+                            ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35009 35022]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [34956 36568])
+                    ("timeoutExpired" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36603 36616]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [36570 36794])
+                    ("updateExternalStylusState" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("state" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("StylusState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [36840 36865]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [36796 37055])
+                    ("getDeviceInfo" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("outDeviceInfo" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [37089 37120]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [37057 37434])
+                    ("getKeyCodeState" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37473 37493])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37494 37510]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [37436 37588])
+                    ("getScanCodeState" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37628 37648])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37649 37666]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [37590 37746])
+                    ("getSwitchState" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37784 37804])
+                            ("switchCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37805 37824]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [37748 37904])
+                    ("getState" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37936 37956])
+                            ("code" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37957 37970])
+                            ("getStateFunc" variable (:type ("GetStateFunc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37971 37997]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [37906 38730])
+                    ("markSupportedKeyCodes" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38772 38792])
+                            ("numCodes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38793 38809])
+                            ("keyCodes" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [38818 38842])
+                            ("outFlags" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [38843 38861]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [38732 39216])
+                    ("vibrate" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("pattern" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("nsecs_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [39244 39267])
+                            ("patternSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39268 39287])
+                            ("repeat" variable (:type ("ssize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39288 39303])
+                            ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39312 39326]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [39218 39528])
+                    ("cancelVibrate" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39562 39576]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [39530 39754])
+                    ("cancelTouch" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39786 39799]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [39756 39974])
+                    ("getMetaState" function
+                       (:parent "InputDevice"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [39976 40236])
+                    ("fadePointer" function
+                       (:parent "InputDevice"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40238 40440])
+                    ("bumpGeneration" function
+                       (:parent "InputDevice"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40442 40526])
+                    ("notifyReset" function
+                       (:parent "InputDevice"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40558 40571]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40528 40673])
+                    ("CursorButtonAccumulator" function
+                       (:constructor-flag t
+                        :parent "CursorButtonAccumulator"
+                        :type ("CursorButtonAccumulator" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [40712 40786])
+                    ("reset" function
+                       (:parent "CursorButtonAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [40824 40844]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40788 41238])
+                    ("clearButtons" function
+                       (:parent "CursorButtonAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [41240 41439])
+                    ("process" function
+                       (:parent "CursorButtonAccumulator"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [41479 41504]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [41441 42264])
+                    ("getButtonState" function
+                       (:parent "CursorButtonAccumulator"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [42266 42771])
+                    ("CursorMotionAccumulator" function
+                       (:constructor-flag t
+                        :parent "CursorMotionAccumulator"
+                        :type ("CursorMotionAccumulator" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [42810 42889])
+                    ("reset" function
+                       (:parent "CursorMotionAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [42927 42947]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [42891 42976])
+                    ("clearRelativeAxes" function
+                       (:parent "CursorMotionAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [42978 43061])
+                    ("process" function
+                       (:parent "CursorMotionAccumulator"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [43101 43126]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43063 43368])
+                    ("finishSync" function
+                       (:parent "CursorMotionAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43370 43441])
+                    ("CursorScrollAccumulator" function
+                       (:constructor-flag t
+                        :parent "CursorScrollAccumulator"
+                        :type ("CursorScrollAccumulator" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [43480 43613])
+                    ("configure" function
+                       (:parent "CursorScrollAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [43655 43675]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43615 43857])
+                    ("reset" function
+                       (:parent "CursorScrollAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [43895 43915]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43859 43944])
+                    ("clearRelativeAxes" function
+                       (:parent "CursorScrollAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [43946 44038])
+                    ("process" function
+                       (:parent "CursorScrollAccumulator"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [44078 44103]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [44040 44363])
+                    ("finishSync" function
+                       (:parent "CursorScrollAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [44365 44436])
+                    ("TouchButtonAccumulator" function
+                       (:constructor-flag t
+                        :parent "TouchButtonAccumulator"
+                        :type ("TouchButtonAccumulator" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [44474 44597])
+                    ("configure" function
+                       (:parent "TouchButtonAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [44638 44658]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [44599 44974])
+                    ("reset" function
+                       (:parent "TouchButtonAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [45011 45031]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [44976 46013])
+                    ("clearButtons" function
+                       (:parent "TouchButtonAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [46015 46388])
+                    ("process" function
+                       (:parent "TouchButtonAccumulator"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [46427 46452]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [46390 47971])
+                    ("getButtonState" function
+                       (:parent "TouchButtonAccumulator"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [47973 48245])
+                    ("getToolType" function
+                       (:parent "TouchButtonAccumulator"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [48247 48789])
+                    ("isToolActive" function
+                       (:parent "TouchButtonAccumulator"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [48791 49102])
+                    ("isHovering" function
+                       (:parent "TouchButtonAccumulator"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [49104 49195])
+                    ("hasStylus" function
+                       (:parent "TouchButtonAccumulator"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [49197 49271])
+                    ("RawPointerAxes" function
+                       (:constructor-flag t
+                        :parent "RawPointerAxes"
+                        :type ("RawPointerAxes" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [49301 49350])
+                    ("clear" function
+                       (:parent "RawPointerAxes"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [49352 49657])
+                    ("RawPointerData" function
+                       (:constructor-flag t
+                        :parent "RawPointerData"
+                        :type ("RawPointerData" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [49687 49736])
+                    ("clear" function
+                       (:parent "RawPointerData"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [49738 49811])
+                    ("copyFrom" function
+                       (:parent "RawPointerData"
+                        :arguments 
+                          ( ("other" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("RawPointerData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [49843 49871]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [49813 50177])
+                    ("getCentroidOfTouchingPointers" function
+                       (:parent "RawPointerData"
+                        :arguments 
+                          ( ("outX" variable
+                               (:pointer 1
+                                :type "float")
+                                (reparse-symbol arg-sub-list) [50230 50242])
+                            ("outY" variable
+                               (:pointer 1
+                                :type "float")
+                                (reparse-symbol arg-sub-list) [50243 50255]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [50179 50673])
+                    ("CookedPointerData" function
+                       (:constructor-flag t
+                        :parent "CookedPointerData"
+                        :type ("CookedPointerData" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [50706 50761])
+                    ("clear" function
+                       (:parent "CookedPointerData"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [50763 50876])
+                    ("copyFrom" function
+                       (:parent "CookedPointerData"
+                        :arguments 
+                          ( ("other" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("CookedPointerData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [50911 50942]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [50878 51342])
+                    ("SingleTouchMotionAccumulator" function
+                       (:constructor-flag t
+                        :parent "SingleTouchMotionAccumulator"
+                        :type ("SingleTouchMotionAccumulator" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [51386 51475])
+                    ("reset" function
+                       (:parent "SingleTouchMotionAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [51518 51538]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [51477 51948])
+                    ("clearAbsoluteAxes" function
+                       (:parent "SingleTouchMotionAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [51950 52143])
+                    ("process" function
+                       (:parent "SingleTouchMotionAccumulator"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [52188 52213]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [52145 52898])
+                    ("MultiTouchMotionAccumulator" function
+                       (:constructor-flag t
+                        :parent "MultiTouchMotionAccumulator"
+                        :type ("MultiTouchMotionAccumulator" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [52941 53115])
+                    ("MultiTouchMotionAccumulator" function
+                       (:destructor-flag t
+                        :parent "MultiTouchMotionAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [53117 53201])
+                    ("configure" function
+                       (:parent "MultiTouchMotionAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [53247 53267])
+                            ("slotCount" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53276 53293])
+                            ("usingSlotsProtocol" variable (:type "bool") (reparse-symbol arg-sub-list) [53294 53318]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [53203 53513])
+                    ("reset" function
+                       (:parent "MultiTouchMotionAccumulator"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [53555 53575]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [53515 54844])
+                    ("clearSlots" function
+                       (:parent "MultiTouchMotionAccumulator"
+                        :arguments 
+                          ( ("initialSlot" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54891 54911]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [54846 55062])
+                    ("process" function
+                       (:parent "MultiTouchMotionAccumulator"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [55106 55131]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [55064 58288])
+                    ("finishSync" function
+                       (:parent "MultiTouchMotionAccumulator"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [58290 58402])
+                    ("hasStylus" function
+                       (:parent "MultiTouchMotionAccumulator"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [58404 58483])
+                    ("Slot" function
+                       (:parent "MultiTouchMotionAccumulator::Slot"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [58532 58590])
+                    ("clear" function
+                       (:parent "MultiTouchMotionAccumulator::Slot"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [58592 59043])
+                    ("getToolType" function
+                       (:parent "MultiTouchMotionAccumulator::Slot"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [59045 59392])
+                    ("InputMapper" function
+                       (:constructor-flag t
+                        :parent "InputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [59444 59464]))                          
+                        :type ("InputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [59419 59526])
+                    ("InputMapper" function
+                       (:destructor-flag t
+                        :parent "InputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [59528 59559])
+                    ("populateDeviceInfo" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [59598 59620]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [59561 59659])
+                    ("dump" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [59684 59698]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [59661 59702])
+                    ("configure" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59732 59745])
+                            ("config" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("InputReaderConfiguration" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [59754 59793])
+                            ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59794 59811]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [59704 59815])
+                    ("reset" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59841 59854]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [59817 59858])
+                    ("timeoutExpired" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59893 59906]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [59860 59910])
+                    ("getKeyCodeState" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59949 59969])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59970 59986]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [59912 60021])
+                    ("getScanCodeState" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60061 60081])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60082 60099]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [60023 60134])
+                    ("getSwitchState" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60172 60192])
+                            ("switchCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60193 60212]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [60136 60247])
+                    ("markSupportedKeyCodes" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60289 60309])
+                            ("numCodes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60310 60326])
+                            ("keyCodes" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [60335 60359])
+                            ("outFlags" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [60360 60378]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [60249 60400])
+                    ("vibrate" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("pattern" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("nsecs_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [60428 60451])
+                            ("patternSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60452 60471])
+                            ("repeat" variable (:type ("ssize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60472 60487])
+                            ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60496 60510]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [60402 60514])
+                    ("cancelVibrate" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60548 60562]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [60516 60566])
+                    ("cancelTouch" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60598 60611]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [60568 60615])
+                    ("getMetaState" function
+                       (:parent "InputMapper"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [60617 60670])
+                    ("updateExternalStylusState" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("state" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("StylusState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [60716 60741]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [60672 60746])
+                    ("fadePointer" function
+                       (:parent "InputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [60748 60783])
+                    ("getAbsoluteAxisInfo" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("axis" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60827 60840])
+                            ("axisInfo" variable
+                               (:pointer 1
+                                :type ("RawAbsoluteAxisInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [60841 60871]))                          
+                        :type ("status_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [60785 60953])
+                    ("bumpGeneration" function
+                       (:parent "InputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [60955 61024])
+                    ("dumpRawAbsoluteAxisInfo" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [61068 61082])
+                            ("axis" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("RawAbsoluteAxisInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [61091 61123])
+                            ("name" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [61124 61141]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [61026 61433])
+                    ("dumpStylusState" function
+                       (:parent "InputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [61469 61483])
+                            ("state" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("StylusState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [61484 61509]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [61435 61791])
+                    ("SwitchInputMapper" function
+                       (:constructor-flag t
+                        :parent "SwitchInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [61860 61880]))                          
+                        :type ("SwitchInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [61823 61955])
+                    ("SwitchInputMapper" function
+                       (:destructor-flag t
+                        :parent "SwitchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [61957 62000])
+                    ("getSources" function
+                       (:parent "SwitchInputMapper"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [62002 62079])
+                    ("process" function
+                       (:parent "SwitchInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [62113 62138]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [62081 62371])
+                    ("processSwitch" function
+                       (:parent "SwitchInputMapper"
+                        :arguments 
+                          ( ("switchCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62411 62430])
+                            ("switchValue" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62431 62451]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [62373 62703])
+                    ("sync" function
+                       (:parent "SwitchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62734 62747]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [62705 63020])
+                    ("getSwitchState" function
+                       (:parent "SwitchInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63064 63084])
+                            ("switchCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63085 63104]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [63022 63177])
+                    ("dump" function
+                       (:parent "SwitchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [63208 63222]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [63179 63345])
+                    ("VibratorInputMapper" function
+                       (:constructor-flag t
+                        :parent "VibratorInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [63420 63440]))                          
+                        :type ("VibratorInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [63379 63493])
+                    ("VibratorInputMapper" function
+                       (:destructor-flag t
+                        :parent "VibratorInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [63495 63542])
+                    ("getSources" function
+                       (:parent "VibratorInputMapper"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [63544 63604])
+                    ("populateDeviceInfo" function
+                       (:parent "VibratorInputMapper"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [63651 63673]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [63606 63750])
+                    ("process" function
+                       (:parent "VibratorInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [63786 63811]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [63752 63896])
+                    ("vibrate" function
+                       (:parent "VibratorInputMapper"
+                        :arguments 
+                          ( ("pattern" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("nsecs_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [63932 63955])
+                            ("patternSize" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63956 63975])
+                            ("repeat" variable (:type ("ssize_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63976 63991])
+                            ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64000 64014]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [63898 64571])
+                    ("cancelVibrate" function
+                       (:parent "VibratorInputMapper"
+                        :arguments 
+                          ( ("token" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64613 64627]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [64573 64803])
+                    ("timeoutExpired" function
+                       (:parent "VibratorInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64846 64859]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [64805 65042])
+                    ("nextStep" function
+                       (:parent "VibratorInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [65044 66003])
+                    ("stopVibrating" function
+                       (:parent "VibratorInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [66005 66228])
+                    ("dump" function
+                       (:parent "VibratorInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [66261 66275]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [66230 66404])
+                    ("KeyboardInputMapper" function
+                       (:constructor-flag t
+                        :parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [66480 66500])
+                            ("source" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [66509 66525])
+                            ("keyboardType" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [66526 66547]))                          
+                        :type ("KeyboardInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [66439 66635])
+                    ("KeyboardInputMapper" function
+                       (:destructor-flag t
+                        :parent "KeyboardInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [66637 66684])
+                    ("getSources" function
+                       (:parent "KeyboardInputMapper"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [66686 66752])
+                    ("populateDeviceInfo" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [66799 66821]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [66754 66991])
+                    ("dump" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [67024 67038]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [66993 67481])
+                    ("configure" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [67520 67533])
+                            ("config" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("InputReaderConfiguration" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [67542 67581])
+                            ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [67582 67599]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [67484 68247])
+                    ("configureParameters" function
+                       (:parent "KeyboardInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [68249 68791])
+                    ("dumpParameters" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [68834 68848]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [68793 69229])
+                    ("reset" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [69263 69276]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [69231 69430])
+                    ("process" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [69466 69491]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [69432 70670])
+                    ("isKeyboardOrGamepadKey" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70721 70738]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [70672 70924])
+                    ("processKey" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70963 70976])
+                            ("down" variable (:type "bool") (reparse-symbol arg-sub-list) [70977 70987])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70988 71005])
+                            ("usageCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [71014 71032]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [70926 74697])
+                    ("findKeyDown" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74740 74757]))                          
+                        :type ("ssize_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [74699 74933])
+                    ("getKeyCodeState" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74980 75000])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75001 75017]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [74935 75088])
+                    ("getScanCodeState" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75136 75156])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75157 75174]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [75090 75247])
+                    ("markSupportedKeyCodes" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75297 75317])
+                            ("numCodes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75318 75334])
+                            ("keyCodes" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [75343 75367])
+                            ("outFlags" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [75368 75386]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [75249 75484])
+                    ("getMetaState" function
+                       (:parent "KeyboardInputMapper"
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [75486 75556])
+                    ("resetLedState" function
+                       (:parent "KeyboardInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [75558 75809])
+                    ("initializeLedState" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("ledState" variable
+                               (:reference 1
+                                :type ("LedState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [75856 75875])
+                            ("led" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75876 75888]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [75811 75981])
+                    ("updateLedState" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("reset" variable (:type "bool") (reparse-symbol arg-sub-list) [76024 76035]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [75983 76357])
+                    ("updateLedStateForModifier" function
+                       (:parent "KeyboardInputMapper"
+                        :arguments 
+                          ( ("ledState" variable
+                               (:reference 1
+                                :type ("LedState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [76411 76430])
+                            ("led" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [76439 76451])
+                            ("modifier" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [76452 76469])
+                            ("reset" variable (:type "bool") (reparse-symbol arg-sub-list) [76470 76481]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [76359 76751])
+                    ("CursorInputMapper" function
+                       (:constructor-flag t
+                        :parent "CursorInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [76821 76841]))                          
+                        :type ("CursorInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [76784 76875])
+                    ("CursorInputMapper" function
+                       (:destructor-flag t
+                        :parent "CursorInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [76877 76920])
+                    ("getSources" function
+                       (:parent "CursorInputMapper"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [76922 76986])
+                    ("populateDeviceInfo" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [77031 77053]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [76988 78094])
+                    ("dump" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [78125 78139]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [78096 79143])
+                    ("configure" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [79179 79192])
+                            ("config" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("InputReaderConfiguration" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [79201 79240])
+                            ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [79241 79258]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [79145 81125])
+                    ("configureParameters" function
+                       (:parent "CursorInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [81127 82012])
+                    ("dumpParameters" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [82053 82067]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [82014 82622])
+                    ("reset" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82654 82667]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [82624 83001])
+                    ("process" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [83035 83060]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [83003 83313])
+                    ("sync" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83344 83357]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [83315 90736])
+                    ("getScanCodeState" function
+                       (:parent "CursorInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90782 90802])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90803 90820]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [90738 91011])
+                    ("fadePointer" function
+                       (:parent "CursorInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [91013 91180])
+                    ("TouchInputMapper" function
+                       (:constructor-flag t
+                        :parent "TouchInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [91247 91267]))                          
+                        :type ("TouchInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [91212 91488])
+                    ("TouchInputMapper" function
+                       (:destructor-flag t
+                        :parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [91490 91531])
+                    ("getSources" function
+                       (:parent "TouchInputMapper"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [91533 91596])
+                    ("populateDeviceInfo" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [91640 91662]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [91598 93964])
+                    ("dump" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [93994 94008]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [93966 99133])
+                    ("configure" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [99168 99181])
+                            ("config" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("InputReaderConfiguration" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [99190 99229])
+                            ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [99230 99247]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [99135 101656])
+                    ("resolveExternalStylusPresence" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [101658 101928])
+                    ("configureParameters" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [101930 106273])
+                    ("dumpParameters" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [106313 106327]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [106275 107559])
+                    ("configureRawPointerAxes" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [107561 107642])
+                    ("dumpRawPointerAxes" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [107686 107700]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [107644 108673])
+                    ("hasExternalStylus" function
+                       (:parent "TouchInputMapper"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [108675 108764])
+                    ("configureSurface" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [108806 108819])
+                            ("outResetNeeded" variable
+                               (:pointer 1
+                                :type "bool")
+                                (reparse-symbol arg-sub-list) [108820 108841]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [108766 127478])
+                    ("dumpSurface" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [127515 127529]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [127480 128445])
+                    ("configureVirtualKeys" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [128447 130715])
+                    ("dumpVirtualKeys" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [130756 130770]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [130717 131332])
+                    ("parseCalibration" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [131334 136300])
+                    ("resolveCalibration" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [136302 138238])
+                    ("dumpCalibration" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [138279 138293]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [138240 141663])
+                    ("dumpAffineTransformation" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [141713 141727]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [141665 142247])
+                    ("updateAffineTransformation" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [142249 142429])
+                    ("reset" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [142460 142473]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [142431 143360])
+                    ("resetExternalStylus" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [143362 143558])
+                    ("clearStylusDataPendingFlags" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [143560 143702])
+                    ("process" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [143735 143760]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [143704 144012])
+                    ("isCurrentRawPointerInRightClickArea" function
+                       (:parent "TouchInputMapper"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [144055 144732])
+                    ("isCurrentRawPointerNearHands" function
+                       (:parent "TouchInputMapper"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [144734 145335])
+                    ("sync" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [145378 145391]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [145350 146974])
+                    ("processRawTouches" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("timeout" variable (:type "bool") (reparse-symbol arg-sub-list) [147017 147030]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [146976 148928])
+                    ("cookAndDispatch" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [148969 148982]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [148930 154544])
+                    ("applyExternalStylusButtonState" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [154600 154613]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [154546 154788])
+                    ("applyExternalStylusTouchState" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [154843 154856]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [154790 155879])
+                    ("assignExternalStylusId" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("state" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("RawState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [155927 155949])
+                            ("timeout" variable (:type "bool") (reparse-symbol arg-sub-list) [155950 155963]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [155881 157409])
+                    ("timeoutExpired" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [157449 157462]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [157411 157969])
+                    ("updateExternalStylusState" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("state" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("StylusState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [158020 158045]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [157971 158475])
+                    ("consumeRawTouches" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [158518 158531])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [158532 158553]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [158477 163519])
+                    ("dispatchVirtualKey" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [163563 163576])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [163577 163598])
+                            ("keyEventAction" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [163607 163630])
+                            ("keyEventFlags" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [163631 163653]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [163521 164110])
+                    ("abortTouches" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [164148 164161])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [164162 164183]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [164112 164945])
+                    ("dispatchTouches" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [164986 164999])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [165000 165021]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [164947 169586])
+                    ("dispatchHoverExit" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [169629 169642])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [169643 169664]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [169588 170454])
+                    ("dispatchHoverEnterAndMove" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170505 170518])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [170519 170540]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [170456 171893])
+                    ("dispatchButtonRelease" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [171940 171953])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [171954 171975]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [171895 172934])
+                    ("dispatchButtonPress" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [172979 172992])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [172993 173014]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [172936 173950])
+                    ("findActiveIdBits" function
+                       (:parent "TouchInputMapper"
+                        :constant-flag t
+                        :arguments 
+                          ( ("cookedPointerData" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("CookedPointerData" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [174003 174046]))                          
+                        :type ("BitSet32" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [173952 174205])
+                    ("cookPointerData" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [174207 186793])
+                    ("dispatchPointerUsage" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [186839 186852])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [186853 186874])
+                            ("pointerUsage" variable (:type ("PointerUsage" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [186883 186909]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [186795 187419])
+                    ("abortPointerUsage" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [187462 187475])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [187476 187497]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [187421 187886])
+                    ("dispatchPointerGestures" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [187935 187948])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [187949 187970])
+                            ("isTimeout" variable (:type "bool") (reparse-symbol arg-sub-list) [187979 187994]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [187888 198169])
+                    ("abortPointerGestures" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [198215 198228])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [198229 198250]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [198171 199217])
+                    ("preparePointerGestures" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [199265 199278])
+                            ("outCancelPreviousGesture" variable
+                               (:pointer 1
+                                :type "bool")
+                                (reparse-symbol arg-sub-list) [199287 199318])
+                            ("outFinishPreviousGesture" variable
+                               (:pointer 1
+                                :type "bool")
+                                (reparse-symbol arg-sub-list) [199319 199350])
+                            ("isTimeout" variable (:type "bool") (reparse-symbol arg-sub-list) [199351 199366]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [199219 238234])
+                    ("dispatchPointerStylus" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [238281 238294])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [238295 238316]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [238236 239614])
+                    ("abortPointerStylus" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [239658 239671])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [239672 239693]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [239616 239740])
+                    ("dispatchPointerMouse" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [239786 239799])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [239800 239821]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [239742 241876])
+                    ("abortPointerMouse" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [241919 241932])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [241933 241954]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [241878 242039])
+                    ("dispatchPointerSimple" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [242086 242099])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [242100 242121])
+                            ("down" variable (:type "bool") (reparse-symbol arg-sub-list) [242130 242140])
+                            ("hovering" variable (:type "bool") (reparse-symbol arg-sub-list) [242141 242155]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [242041 247349])
+                    ("abortPointerSimple" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247393 247406])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247407 247428]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [247351 247581])
+                    ("dispatchMotion" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247621 247634])
+                            ("policyFlags" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247635 247656])
+                            ("source" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247657 247673])
+                            ("action" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247682 247697])
+                            ("actionButton" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247698 247719])
+                            ("flags" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247720 247734])
+                            ("metaState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247743 247761])
+                            ("buttonState" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247762 247782])
+                            ("edgeFlags" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247783 247801])
+                            ("properties" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("PointerProperties" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [247810 247846])
+                            ("coords" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("PointerCoords" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [247847 247875])
+                            ("idToIndex" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [247884 247910])
+                            ("idBits" variable (:type ("BitSet32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247911 247927])
+                            ("changedId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247928 247946])
+                            ("xPrecision" variable (:type "float") (reparse-symbol arg-sub-list) [247955 247972])
+                            ("yPrecision" variable (:type "float") (reparse-symbol arg-sub-list) [247973 247990])
+                            ("downTime" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [247991 248008]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [247583 249471])
+                    ("updateMovedPointers" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("inProperties" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("PointerProperties" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [249516 249554])
+                            ("inCoords" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("PointerCoords" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [249563 249593])
+                            ("inIdToIndex" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [249594 249622])
+                            ("outProperties" variable
+                               (:pointer 1
+                                :type ("PointerProperties" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [249631 249664])
+                            ("outCoords" variable
+                               (:pointer 1
+                                :type ("PointerCoords" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [249665 249690])
+                            ("outIdToIndex" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("uint32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [249691 249720])
+                            ("idBits" variable (:type ("BitSet32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [249729 249745]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [249473 250524])
+                    ("fadePointer" function
+                       (:parent "TouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [250526 250692])
+                    ("cancelTouch" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [250729 250742]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [250694 250838])
+                    ("isPointInsideSurface" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("x" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [250884 250894])
+                            ("y" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [250895 250905]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [250840 251070])
+                    ("findVirtualKeyHit" function
+                       (:pointer 1
+                        :parent "TouchInputMapper"
+                        :constant-flag t
+                        :arguments 
+                          ( ("x" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [251153 251163])
+                            ("y" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [251164 251174]))                          
+                        :type ("TouchInputMapper::VirtualKey" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [251072 251794])
+                    ("assignPointerIds" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("last" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [251836 251857])
+                            ("current" variable
+                               (:pointer 1
+                                :type ("RawState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [251858 251876]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [251796 259599])
+                    ("getKeyCodeState" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [259643 259663])
+                            ("keyCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [259664 259680]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [259601 260084])
+                    ("getScanCodeState" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [260129 260149])
+                            ("scanCode" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [260150 260167]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [260086 260575])
+                    ("markSupportedKeyCodes" function
+                       (:parent "TouchInputMapper"
+                        :arguments 
+                          ( ("sourceMask" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [260622 260642])
+                            ("numCodes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [260643 260659])
+                            ("keyCodes" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("int32_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [260668 260692])
+                            ("outFlags" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [260693 260711]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [260577 261053])
+                    ("SingleTouchInputMapper" function
+                       (:constructor-flag t
+                        :parent "SingleTouchInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [261138 261158]))                          
+                        :type ("SingleTouchInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [261091 261197])
+                    ("SingleTouchInputMapper" function
+                       (:destructor-flag t
+                        :parent "SingleTouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [261199 261252])
+                    ("reset" function
+                       (:parent "SingleTouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [261289 261302]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [261254 261396])
+                    ("process" function
+                       (:parent "SingleTouchInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [261435 261460]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [261398 261559])
+                    ("syncTouch" function
+                       (:parent "SingleTouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [261600 261613])
+                            ("outState" variable
+                               (:pointer 1
+                                :type ("RawState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [261614 261633]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [261561 263268])
+                    ("configureRawPointerAxes" function
+                       (:parent "SingleTouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [263270 263805])
+                    ("hasStylus" function
+                       (:parent "SingleTouchInputMapper"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [263807 263905])
+                    ("MultiTouchInputMapper" function
+                       (:constructor-flag t
+                        :parent "MultiTouchInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [263987 264007]))                          
+                        :type ("MultiTouchInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [263942 264046])
+                    ("MultiTouchInputMapper" function
+                       (:destructor-flag t
+                        :parent "MultiTouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [264048 264099])
+                    ("reset" function
+                       (:parent "MultiTouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [264135 264148]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [264101 264270])
+                    ("process" function
+                       (:parent "MultiTouchInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [264308 264333]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [264272 264431])
+                    ("syncTouch" function
+                       (:parent "MultiTouchInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [264471 264484])
+                            ("outState" variable
+                               (:pointer 1
+                                :type ("RawState" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [264485 264504]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [264433 267660])
+                    ("configureRawPointerAxes" function
+                       (:parent "MultiTouchInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [267662 269336])
+                    ("hasStylus" function
+                       (:parent "MultiTouchInputMapper"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [269338 269491])
+                    ("ExternalStylusInputMapper" function
+                       (:constructor-flag t
+                        :parent "ExternalStylusInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [269580 269600]))                          
+                        :type ("ExternalStylusInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [269527 269631])
+                    ("getSources" function
+                       (:parent "ExternalStylusInputMapper"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [269633 269718])
+                    ("populateDeviceInfo" function
+                       (:parent "ExternalStylusInputMapper"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [269771 269793]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [269720 269959])
+                    ("dump" function
+                       (:parent "ExternalStylusInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [269998 270012]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [269961 270273])
+                    ("configure" function
+                       (:parent "ExternalStylusInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [270317 270330])
+                            ("config" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("InputReaderConfiguration" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [270339 270378])
+                            ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [270379 270396]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [270275 270510])
+                    ("reset" function
+                       (:parent "ExternalStylusInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [270550 270563]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [270512 270728])
+                    ("process" function
+                       (:parent "ExternalStylusInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [270770 270795]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [270730 271004])
+                    ("sync" function
+                       (:parent "ExternalStylusInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [271043 271056]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [271006 271791])
+                    ("JoystickInputMapper" function
+                       (:constructor-flag t
+                        :parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("device" variable
+                               (:pointer 1
+                                :type ("InputDevice" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [271867 271887]))                          
+                        :type ("JoystickInputMapper" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [271826 271921])
+                    ("JoystickInputMapper" function
+                       (:destructor-flag t
+                        :parent "JoystickInputMapper"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [271923 271970])
+                    ("getSources" function
+                       (:parent "JoystickInputMapper"
+                        :type ("uint32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [271972 272053])
+                    ("populateDeviceInfo" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [272100 272122]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [272055 272459])
+                    ("addMotionRange" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("axisId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [272502 272517])
+                            ("axis" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Axis" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [272518 272535])
+                            ("info" variable
+                               (:pointer 1
+                                :type ("InputDeviceInfo" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [272544 272566]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [272461 273150])
+                    ("getCompatAxis" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("axis" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [273376 273389]))                          
+                        :type ("int32_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [273333 273589])
+                    ("dump" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("dump" variable
+                               (:reference 1
+                                :type ("String8" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [273622 273636]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [273591 275281])
+                    ("configure" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [275319 275332])
+                            ("config" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("InputReaderConfiguration" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [275341 275380])
+                            ("changes" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [275381 275398]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [275283 279780])
+                    ("haveAxis" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("axisId" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [279817 279832]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [279782 280186])
+                    ("pruneAxes" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("ignoreExplicitlyMappedAxes" variable (:type "bool") (reparse-symbol arg-sub-list) [280224 280256]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [280188 280644])
+                    ("isCenteredAxis" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("axis" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [280687 280700]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [280646 281157])
+                    ("reset" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [281191 281204]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [281159 281419])
+                    ("process" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("rawEvent" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("RawEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [281455 281480]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [281421 283112])
+                    ("sync" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("when" variable (:type ("nsecs_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [283145 283158])
+                            ("force" variable (:type "bool") (reparse-symbol arg-sub-list) [283159 283170]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [283114 284577])
+                    ("setPointerCoordsAxisValue" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("pointerCoords" variable
+                               (:pointer 1
+                                :type ("PointerCoords" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [284631 284660])
+                            ("axis" variable (:type ("int32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [284669 284682])
+                            ("value" variable (:type "float") (reparse-symbol arg-sub-list) [284683 284695]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [284579 285135])
+                    ("filterAxes" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("force" variable (:type "bool") (reparse-symbol arg-sub-list) [285174 285185]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [285137 285988])
+                    ("hasValueChangedSignificantly" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("filter" variable (:type "float") (reparse-symbol arg-sub-list) [286054 286067])
+                            ("newValue" variable (:type "float") (reparse-symbol arg-sub-list) [286068 286083])
+                            ("currentValue" variable (:type "float") (reparse-symbol arg-sub-list) [286084 286103])
+                            ("min" variable (:type "float") (reparse-symbol arg-sub-list) [286104 286114])
+                            ("max" variable (:type "float") (reparse-symbol arg-sub-list) [286115 286125]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [285990 286823])
+                    ("hasMovedNearerToValueWithinFilteredRange" function
+                       (:parent "JoystickInputMapper"
+                        :arguments 
+                          ( ("filter" variable (:type "float") (reparse-symbol arg-sub-list) [286901 286914])
+                            ("newValue" variable (:type "float") (reparse-symbol arg-sub-list) [286915 286930])
+                            ("currentValue" variable (:type "float") (reparse-symbol arg-sub-list) [286931 286950])
+                            ("thresholdValue" variable (:type "float") (reparse-symbol arg-sub-list) [286951 286972]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [286825 287230]))                  
+                :type "namespace")
+                nil [1726 287233]))          
+      :file "InputReader.cpp"
+      :pointmax 287255
+      :fsize 287254
+      :lastmodtime '(22419 12806 926812 234000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DEBUG_POINTER_ASSIGNMENT" . ((number "0" 1095 . 1096)))
+          ("INDENT" . ((string "\"  \"" 1616 . 1620)))
+          ("INDENT4" . ((string "\"        \"" 1685 . 1695)))
+          ("INDENT5" . ((string "\"          \"" 1712 . 1724)))
+          ("DEBUG_POINTERS" . ((number "0" 998 . 999)))
+          ("DEBUG_HACKS" . ((number "0" 852 . 853)))
+          ("DEBUG_VIBRATOR" . ((number "0" 1236 . 1237)))
+          ("DEBUG_STYLUS_FUSION" . ((number "0" 1315 . 1316)))
+          ("DEBUG_VIRTUAL_KEYS" . ((number "0" 934 . 935)))
+          ("DEBUG_RAW_EVENTS" . ((number "0" 771 . 772)))
+          ("DEBUG_GESTURES" . ((number "0" 1168 . 1169)))
+          ("LOG_TAG" . ((string "\"InputReader\"" 638 . 651)))
+          ("INDENT2" . ((string "\"    \"" 1637 . 1643)))
+          ("INDENT3" . ((string "\"      \"" 1660 . 1668)))
+          )
+)
+    (semanticdb-table "InputReader.h"
+      :file "InputReader.h"
+      :fsize 68046
+      :lastmodtime '(22408 46584 280120 141000)))
+  :file "!data!pacific-6!frameworks!native!services!inputflinger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

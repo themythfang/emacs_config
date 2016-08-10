@@ -1,0 +1,30 @@
+;; Object JideKeymapClient/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "JideKeymapClient/"
+  :tables
+  (list
+    (semanticdb-table "Android.mk"
+      :major-mode 'makefile-gmake-mode
+      :tags 
+        '( ("LOCAL_PATH" variable (:default-value ("$(call my-dir)")) nil [1 29])
+            ("$(CLEAR_VARS)" include nil nil [30 52])
+            ("LOCAL_MODULE_TAGS" variable (:default-value ("optional")) nil [53 83])
+            ("LOCAL_SRC_FILES" variable (:default-value ("$(call all-java-files-under, src)")) nil [83 136])
+            ("LOCAL_RESOURCE_DIR" variable (:default-value ("$(LOCAL_PATH)/res")) nil [137 177])
+            ("LOCAL_STATIC_JAVA_LIBRARIES" variable (:default-value ("gson-lib" "remixos-analytics")) nil [178 248])
+            ("LOCAL_PACKAGE_NAME" variable (:default-value ("JideKeymap")) nil [249 282])
+            ("LOCAL_CERTIFICATE" variable (:default-value ("platform")) nil [283 313])
+            ("LOCAL_PRIVILEGED_MODULE" variable (:default-value ("true")) nil [313 345])
+            ("LOCAL_PROGUARD_FLAG_FILES" variable (:default-value ("proguard.flags")) nil [345 389])
+            ("$(BUILD_PACKAGE)" include nil nil [389 414])
+            ("$(CLEAR_VARS)" include nil nil [471 493])
+            ("LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES" variable (:default-value ("gson-lib:libs/gson-2.7.jar")) nil [494 567])
+            ("$(BUILD_MULTI_PREBUILT)" include nil nil [567 599]))          
+      :file "Android.mk"
+      :pointmax 599
+      :fsize 598
+      :lastmodtime '(22414 57299 177913 602000)
+      :unmatched-syntax nil))
+  :file "!data!pacific-6!remixos!apps!InputDaemon!JideKeymapClient!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
