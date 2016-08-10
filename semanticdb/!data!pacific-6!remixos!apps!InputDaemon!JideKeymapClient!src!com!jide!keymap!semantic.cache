@@ -1,0 +1,24 @@
+;; Object keymap/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "keymap/"
+  :tables
+  (list
+    (semanticdb-table "JideGameToolkitManager.java"
+      :major-mode 'java-mode
+      :tags nil
+      :file "JideGameToolkitManager.java"
+      :pointmax 23027
+      :fsize 23026
+      :lastmodtime '(22418 8981 314958 755000)
+      :unmatched-syntax nil)
+    (semanticdb-table "JideKeymapService.java"
+      :major-mode 'java-mode
+      :tags nil
+      :file "JideKeymapService.java"
+      :pointmax 25416
+      :fsize 25415
+      :lastmodtime '(22418 8904 870958 917000)
+      :unmatched-syntax nil))
+  :file "!data!pacific-6!remixos!apps!InputDaemon!JideKeymapClient!src!com!jide!keymap!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
