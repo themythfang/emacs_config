@@ -55,9 +55,9 @@
 (add-hook 'makefile-mode-hook (lambda ()
                                 (run-hooks 'prelude-makefile-mode-hook)))
 
-(require 'yf-basic)
-(add-hook 'c-mode-common-hook (lambda ()
-                                (run-hooks 'yf-basic-hook)))
+;; (require 'yf-basic)
+;; (add-hook 'c-mode-common-hook (lambda ()
+;;                                 (run-hooks 'yf-basic-hook)))
 
 (provide 'prelude-c)
 
