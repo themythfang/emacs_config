@@ -2,6 +2,7 @@
   (global-set-key (kbd "C-c C-g") 'grep-find)
   (global-set-key (kbd "C-x C-i") 'previous-buffer)
   (global-set-key (kbd "C-x C-o") 'next-buffer)
+  (global-set-key (kbd "C-x C-e") 'recentf-open-files)
   (linum-mode t))
 (setq yf-basic-hook 'yf-basic-setting)
 
