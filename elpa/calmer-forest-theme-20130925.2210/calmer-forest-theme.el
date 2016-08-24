@@ -36,7 +36,7 @@
 (deftheme calmer-forest)
 
 (custom-theme-set-faces 'calmer-forest
-  '(default ((t (:stipple nil :background "gray12" :foreground "green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal))))
+  '(default ((t (:stipple nil :background "gray12" :foreground "medium spring green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal))))
   '(Info-title-1-face ((t (:bold t :family "helv" :weight bold :height 1.728))) t)
   '(Info-title-2-face ((t (:bold t :family "helv" :weight bold :height 1.44))) t)
   '(Info-title-3-face ((t (:bold t :family "helv" :weight bold :height 1.2))) t)
