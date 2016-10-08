@@ -252,7 +252,7 @@ The body of the advice is in BODY."
 
 ;; bookmarks
 (require 'bookmark)
-(setq bookmark-default-file (expand-file-name "bookmarks" "personal")
+(setq bookmark-default-file (expand-file-name "bookmarks" prelude-savefile-dir)
       bookmark-save-flag 1)
 
 ;; projectile is a project management mode
