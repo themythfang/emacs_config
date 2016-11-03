@@ -34,9 +34,9 @@
 ;;; Code:
 
 ;; when to evaluate the init duration, just open it manually.
-(add-to-list 'load-path "~/.emacs.d/benchmark-init/")
-(require 'benchmark-init-loaddefs)
-(benchmark-init/activate)
+;; (add-to-list 'load-path "~/.emacs.d/benchmark-init/")
+;; (require 'benchmark-init-loaddefs)
+;; (benchmark-init/activate)
 
 (defvar current-user
   (getenv
