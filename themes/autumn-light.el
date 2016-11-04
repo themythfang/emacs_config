@@ -47,7 +47,7 @@
  '(fringe           ((t (:background "wheat"))))
  '(cursor           ((t (:background "red"))))
  '(highlight        ((t (:foreground "white" :background "DarkSlateBlue"))))
- '(region           ((t (:foreground "gray90" :background "DarkSlateBlue"))))
+ '(region           ((t (:foreground "gray90" :background "DarkOrchid"))))
  '(button           ((t (:inherit (link)))))
  '(link             ((t (:underline (:color foreground-color :style line) :foreground "DarkSlateBlue"))) )
  '(link-visited     ((t (:foreground "Purple" :underline (:color foreground-color :style line)))))
