@@ -41,3 +41,4 @@
 (require 'yf-helm-gtags)
 (require 'yf-function-args)
 (require 'yf-theme)
+(require 'yf-go)
